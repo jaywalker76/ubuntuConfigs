@@ -60,12 +60,14 @@ else
 				19 "Swift" off
 				20 "Codium" off
 				21 "Terminator" off
-				22	"Steam" off
-				23	"Tauri" off
-				24	"Nvm" off
-				25	"Weather Indicator" off
-                26	"Obs Studio" off
-                27	"Blender" off
+				22 "Steam" off
+				23 "Tauri" off
+				24 "Nvm" off
+				25 "Weather Indicator" off
+                26 "Obs Studio" off
+                27 "Blender" off
+                28 "Pip3" off
+                29 "NPM" off
 		 )
 
 		choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -247,9 +249,22 @@ else
                 sudo snap install blender --classic
 				;;
 
+            28)	#Pip3
+				echo "Installing Pip3"
+				sudo apt install python3-pip -y
+				;;
 
+            29)	#NPM
+				echo "Installing NPM"
+				sudo apt install npm -y
+				;;
 
-                
+            30)	#NeoVim
+				echo "Installing Neovim"
+				curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o /tmp/nvim.appimage
+                sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
+                chmod +x /usr/local/bin/nvim
+				;;                
 	        esac
 	done
 fi
