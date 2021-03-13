@@ -42,3 +42,7 @@ sudo udevadm control --reload-rules
 mkdir ~/.config/Yubico
 
 pamu2fcfg > ~/.config/Yubico/u2f_keys
+
+
+
+sudo snap install flutter --classic

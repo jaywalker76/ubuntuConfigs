@@ -68,6 +68,8 @@ else
                 27 "Blender" off
                 28 "Pip3" off
                 29 "NPM" off
+				30 "NeoVim" off
+				31 "Cargo" off
 		 )
 
 		choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -264,7 +266,17 @@ else
 				curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o /tmp/nvim.appimage
                 sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
                 chmod +x /usr/local/bin/nvim
-				;;                
+				;;
+			31)	#Deno
+				echo "Installing Cargo"
+				sudo apt-get install -y cargo
+				echo "Installing Deno"
+				cargo install deno
+				;;
+			32)	#Node Red
+				echo "Installing Node-Red"
+				sudo snap install node-red
+				;;
 	        esac
 	done
 fi
